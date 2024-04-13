@@ -31,3 +31,15 @@ Route::redirect('/home','greeting');
 Route::get('/index', function(){
     return '<a href="/home">Home</a>';
 });
+// blade start
+// opening blade through routes
+Route::get('/greeting', function(){
+return view('greeting');
+});
+// opening parameterized Routes
+Route::get('/teacher/{name?}', function($name=NULL){
+return view('admin.profile', ['name'=>$name]);
+});
+// how to clear views cache in laravel
+//php artisan view:clear
+// 
